@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Socialinker</title>
 
   <style>
@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #c9e0ff, #deecff);
+      background: #c9e0ff;
       color: #0a1f44;
     }
 
@@ -20,6 +20,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 16px 24px;
+      background: #deecff;
     }
 
     .logo {
@@ -28,11 +29,6 @@
       gap: 10px;
       font-size: 22px;
       font-weight: bold;
-    }
-
-    .logo img {
-      width: 28px;
-      height: 28px;
     }
 
     .register-btn {
@@ -63,16 +59,14 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
-    /* ===== OVERLAY ===== */
+    /* ===== POPUP OVERLAY ===== */
     .overlay {
-      display: none;
       position: fixed;
       inset: 0;
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(6px);
-      display: flex;
-      align-items: center;
+      background: rgba(0, 0, 0, 0.35);
+      display: none;
       justify-content: center;
+      align-items: center;
       z-index: 1000;
     }
 
@@ -81,37 +75,34 @@
       background: white;
       width: 90%;
       max-width: 420px;
-      padding: 28px;
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
       position: relative;
     }
 
     .popup h2 {
       text-align: center;
-      margin-bottom: 24px;
-      font-size: 22px;
+      margin-bottom: 20px;
     }
 
     .popup input {
       width: 100%;
-      padding: 14px 16px;
-      margin-bottom: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
       border-radius: 14px;
-      border: 1px solid #d0d7e2;
-      font-size: 15px;
-      box-sizing: border-box;
+      border: 1px solid #ddd;
+      font-size: 14px;
     }
 
     .popup button {
       width: 100%;
-      padding: 16px;
-      border-radius: 22px;
+      padding: 14px;
+      border-radius: 20px;
       border: none;
-      background: linear-gradient(135deg, #0a1f44, #123a7a);
+      background: #0a1f44;
       color: white;
-      font-size: 16px;
-      font-weight: bold;
+      font-size: 15px;
       cursor: pointer;
       margin-top: 10px;
     }
@@ -119,10 +110,10 @@
     .close-btn {
       position: absolute;
       top: 14px;
-      right: 18px;
+      right: 16px;
       font-size: 20px;
       cursor: pointer;
-      color: #aaa;
+      color: #555;
     }
 
     /* ===== MOBILE ===== */
@@ -136,46 +127,46 @@
 
 <body>
 
-<header>
-  <div class="logo">
-    <img src="logoweb.png" alt="logo">
-    Socialinker
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Socialinker</div>
+    <button class="register-btn" onclick="openPopup()">Register</button>
+  </header>
+
+  <!-- SEARCH -->
+  <div class="search-container">
+    <input type="text" placeholder="Search by name, username or city..." />
   </div>
-  <button class="register-btn" onclick="openPopup()">Register</button>
-</header>
 
-<div class="search-container">
-  <input type="text" placeholder="Search by name, username or city...">
-</div>
+  <!-- POPUP -->
+  <div class="overlay" id="overlay">
+    <div class="popup">
+      <span class="close-btn" onclick="closePopup()">×</span>
+      <h2>Create your profile</h2>
 
-<!-- POPUP -->
-<div class="overlay" id="overlay">
-  <div class="popup">
-    <div class="close-btn" onclick="closePopup()">×</div>
-    <h2>Create your profile</h2>
+      <input type="text" placeholder="Name" />
+      <input type="text" placeholder="Last name" />
+      <input type="text" placeholder="City" />
+      <input type="date" />
+      <input type="text" placeholder="Instagram username" />
+      <input type="text" placeholder="TikTok username" />
+      <input type="text" placeholder="Facebook username" />
+      <input type="text" placeholder="Snapchat username" />
 
-    <input type="text" placeholder="Name">
-    <input type="text" placeholder="Last name">
-    <input type="text" placeholder="City">
-    <input type="date">
-    <input type="text" placeholder="Instagram username">
-    <input type="text" placeholder="TikTok username">
-    <input type="text" placeholder="Facebook username">
-    <input type="text" placeholder="Snapchat username">
-
-    <button>Create profile</button>
+      <button>Create profile</button>
+    </div>
   </div>
-</div>
 
-<script>
-  function openPopup() {
-    document.getElementById("overlay").style.display = "flex";
-  }
+  <!-- JS -->
+  <script>
+    function openPopup() {
+      document.getElementById("overlay").style.display = "flex";
+    }
 
-  function closePopup() {
-    document.getElementById("overlay").style.display = "none";
-  }
-</script>
+    function closePopup() {
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
