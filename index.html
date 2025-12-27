@@ -5,90 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Socialinker</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #0a1f44;
-    }
+   <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #deecff;
+    color: #0a1f44;
+  }
 
-    /* 🔝 HEADER */
-    header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 15px 20px;
-      border-bottom: 1px solid #e5e5e5;
-      position: sticky;
-      top: 0;
-      background: white;
-      z-index: 10;
-    }
+  header {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    background-color: #c9e0ff;
+  }
 
-    header img {
-      height: 40px;
-      width: auto;
-    }
+  header img {
+    height: 40px;
+    margin-right: 10px;
+  }
 
-    header h1 {
-      font-size: 22px;
-      margin: 0;
-      color: #0a1f44;
-    }
+  header h1 {
+    font-size: 22px;
+    margin: 0;
+    font-weight: 600;
+  }
 
-    /* 🔍 SEARCH AREA */
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    padding: 0 20px;
+  }
+
+  .search-container input {
+    width: 100%;
+    max-width: 600px;
+    padding: 14px 18px;
+    font-size: 18px;
+    border-radius: 14px;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+
+  .search-container input::placeholder {
+    color: #8da2c0;
+  }
+
+  .search-container input:focus {
+    box-shadow: 0 12px 30px rgba(10, 31, 68, 0.18);
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
     .search-container {
-      margin: 40px auto;
-      max-width: 600px;
-      padding: 0 20px;
+      margin-top: 40px;
     }
 
     .search-container input {
-      width: 100%;
-      padding: 16px;
-      font-size: 18px;
-      border-radius: 10px;
-      border: 1px solid #cfd8e3;
-      outline: none;
+      padding: 10px 14px;
+      font-size: 16px;
+      border-radius: 12px;
     }
-
-    .search-container input:focus {
-      border-color: #0a1f44;
-    }
-
-    /* 📱 MOBILE */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 18px;
-      }
-
-      .search-container {
-        margin-top: 25px;
-      }
-
-      .search-container input {
-        font-size: 16px;
-        padding: 12px;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
 
-  <!-- 🔝 HEADER -->
   <header>
-    <img src="logo.png" alt="Socialinker logo">
+    <img src="logoweb.png" alt="Socialinker logo">
     <h1>Socialinker</h1>
   </header>
 
-  <!-- 🔍 SEARCH -->
   <div class="search-container">
-    <input
-      type="text"
-      placeholder="Cerca nome e cognome..."
-    >
+    <input type="text" placeholder="Cerca nome e cognome...">
   </div>
 
 </body>
